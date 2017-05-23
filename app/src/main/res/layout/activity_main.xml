@@ -6,65 +6,53 @@
     android:layout_height="match_parent"
    android:orientation="vertical"
     tools:context="myapplication.mediaplayer2.MainActivity">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="#ff3097fd"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:src="@drawable/ic_topbanner_logo" />
-
-        <TextView
-            android:id="@+id/tv_sousuo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/sousuokuang_bg_seloctor"
-            android:clickable="true"
-            android:drawableLeft="@drawable/sousuokuang_seloctor"
-            android:text="全网搜索..."
-            android:textColor="@drawable/sousuokuang_textcolor_seloctor" />
-
-        <RelativeLayout
-            android:id="@+id/rl_game"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp">
-
-            <TextView
-                android:id="@+id/tv_game"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:drawableLeft="@drawable/ic_topbanner_game" />
-
-            <View
-                android:layout_width="6dp"
-                android:layout_height="6dp"
-                android:layout_alignRight="@id/tv_game"
-                android:background="@drawable/shape_point" />
-
-
-        </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/iv_record"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="8dp"
-            android:src="@drawable/ic_topbanner_record" />
-
-    </LinearLayout>
+    <include layout="@layout/titlebar" />
 
     <FrameLayout
         android:id="@+id/fl_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
+
+
+    <RadioGroup
+        android:padding="8dp"
+        android:id="@+id/rg_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#22000000"
+        android:orientation="horizontal">
+
+
+        <RadioButton
+            android:id="@+id/rb_local_video"
+            style="@style/myStyle"
+            android:drawableTop="@drawable/rb_local_video_selector"
+            android:text="本地视频" />
+
+
+        <RadioButton
+            android:id="@+id/rb_local_audio"
+            style="@style/myStyle"
+            android:drawableTop="@drawable/rb_local_audio_selector"
+            android:text="本地音频" />
+
+
+        <RadioButton
+            android:id="@+id/rb_net_audio"
+            style="@style/myStyle"
+            android:drawableTop="@drawable/rb_net_audio_selector"
+            android:text="网络音频" />
+
+
+
+        <RadioButton
+            android:id="@+id/rb_net_video"
+            style="@style/myStyle"
+            android:drawableTop="@drawable/rb_net_video_selector"
+            android:text="网络视频" />
+
+
+    </RadioGroup>
+
 </LinearLayout>
